@@ -1,0 +1,691 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: "Raleway", sans-serif;
+    src: url("../Raleway/Raleway-VariableFont_wght.ttf") format('ttf');
+}
+
+.flex{
+    display:flex;
+}
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: gray;
+    font-family: "Raleway", sans-serif;
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+}
+
+figure{
+    margin: 0%;
+}
+
+/* SECTION UNE (banner) */
+
+.banner{
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../activebox/HTML/images/banner.jpg");
+    margin: auto;
+}
+
+/* BURGER*/
+
+.burger{
+    visibility:hidden;
+    color: white;
+    background-color: #e84545;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top:30px;
+    right: 30px;
+    z-index: 12;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger i{
+    font-size: 125%;
+}
+
+.myLinks{
+    visibility: visible;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    background-color: #000;
+    opacity: 0.9;
+    transition: opacity 0.5s;
+    z-index: 11;
+}
+
+.myLinks a{
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 2;
+    margin: 0%;
+}
+
+/* */
+
+header{
+    width: 100%;
+    margin: auto;
+    padding: 2em 3em 2em 3em;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    position: fixed;
+    z-index: 10;
+    background-color: #313454;
+}
+
+header nav a{
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    font-weight: 700;
+    margin-left: 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header nav a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.banner div{
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner h1{
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 65px;
+    text-align: center;
+    margin-top: 140px;
+    margin-bottom: 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.banner p{
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    font-family: sans-serif;
+    text-align: center;
+    width: 85%;
+    margin-bottom: 80px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.banner .lien{
+    background-color:#e84545;
+    display: inline-block;
+    margin-bottom: 150px;
+    text-align: center;    
+    width: 180px;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    border-radius: 0.2em;
+    transition: 0.5s;
+}
+
+.lien:hover{
+    background-color:#f11313;
+}
+
+/* SECTION DEUX (features) */
+
+.features figure{
+    color: #e84545;
+    font-size: 60px;
+}
+
+.features{
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-bottom: 80px;
+}
+
+.features figure{
+    flex-direction: column;
+    align-items: center;
+    width: 26%;
+    margin-bottom: 40px;
+}
+
+.features p{
+    font-size: 14px;
+    line-height: 22.4px;
+    color: #6c7279;
+    text-align: center;
+}
+
+.features h2{
+    font-size: 14px;
+    color: #2d3033;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* SECTION TROIS (photoGallery) */
+
+.photoGallery{
+    flex-wrap: wrap;
+    width: auto;
+}
+
+.photoGallery figure{
+    margin:0.5px;
+    width: 24%;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+}
+
+#overlay{
+    position: absolute; /* Sit on top of the page content */
+    opacity: 0;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .5s ease;
+    background-color: rgba(221, 21, 21, 0.616); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.textGallery{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: all, 0.5s;
+    font-size: 14px;
+}
+
+.textun{
+    top: 35%;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.textdeux{
+    top: 55%;
+    font-weight: 400;
+}
+
+.photoGallery figure:hover #overlay{
+    opacity: 1;
+}
+
+.photoGallery figure:hover .photo{
+    transform: scale(1.1);
+}
+
+.photoGallery figure .photo{
+    transition: transform .3s;
+}
+
+.photoGallery figure:hover #overlay .textun{
+    transform: translate3d(-50px, 25px, 0);
+}
+
+.photoGallery figure:hover #overlay .textdeux{
+    transform: translate3d(-50px, -25px, 0);
+}
+
+/* SECTION QUATRE (teams) */
+
+.team{
+    margin-top: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team figure{
+    width: 21%;
+    margin: 0 15px 100px 15px;
+    padding: 0%;
+}
+
+.team img{
+    width: 100%;
+}
+
+.team h3{
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.team h4{
+    color: #e84545;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.team p{
+    font-size: 14px;
+    line-height: 22.4px;
+    color:#6c7279;
+    margin-bottom: 30px;
+}
+
+.team .share{
+    justify-content: center;
+}
+
+.team a{
+    color:#c6cacc;
+    border: 1px solid #e8ecee;
+    border-radius: 2px;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 5px;
+    text-align: center;
+    width: 40px;
+}
+
+.team a:hover{
+    background-color: #e84545;
+    border-color: #e84545;
+    color: #fff;
+    transition: background-color, color, 0.3s;
+}
+
+/* SECTION CINQ (testimonials) */
+
+.legende{
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 8%;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    margin: auto;
+}
+  
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    background-color: brown;
+}
+
+.mySlides img{
+    width: 140%;
+}
+  
+/* Caption text */
+.text {
+    color: white;
+    font: italic 26px "Cardo", Georgia, "Times New Roman", serif;
+    width: 60%;
+    align-items: center;
+}
+  
+/* text author */
+.textAuthor {
+    color: white;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 10px 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+  
+/* SECTION SIX (starting) */
+
+.starting div{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.starting h2{
+    font-size: 28px;
+    color: #2d3033;
+    font-weight: 300;
+    margin-bottom: 10px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.starting p{
+    font-size: 14px;
+    color: #2d3033;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.starting a{
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+    background-color: #e84545;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border: 0;
+    padding: 15px 40px;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    transition: 0.3s;
+}
+
+/* SECTION SEPT (about)*/
+
+.about{
+    justify-content: space-around;
+    background-color: #3a3e64;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.about div{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.about h5{
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.about address{
+    color:rgba(255, 255, 255, 0.5);
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22.4px;
+}
+
+.about p{
+    color:rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    text-align: center;
+    font-size: 14px;
+    line-height: 22.4px;
+    width: 70%;
+}
+
+.about a{
+    border-width: 2px;
+    color: #fff;
+    border: 2px solid #e8ecee;
+    border-radius: 2px;
+    display: block;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 5px;
+    text-align: center;
+    width: 40px;
+    text-decoration: none;
+}
+
+.about a:hover{
+    background-color: #e84545;
+    border-color: #e84545;
+    transition: background-color, color, 0.3s;
+}
+
+.about div .liensFooter{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* FOOTER*/
+
+footer{
+    text-align: center;
+    background-color: #313454;
+    color:rgba(255, 255, 255, 0.5);
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+footer small{
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22.4px;
+}
+
+footer i{
+    color: #e84545;
+    font-size: 11px;
+    margin: 0 2px;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+/* RESPONSIVE*/
+
+@media screen and (max-width: 992px){
+
+
+/* CAROUSEL */
+
+    .mySlides{
+        flex-direction: column;
+    }
+    .mySlides img{
+        width: 100%;
+    }
+
+    .mySlides .legende{
+        padding: 20px 20px 40px 40px;
+    }
+
+    .mySlides .text{
+        font-size: 26px;
+    }
+
+    .dotun{
+        top:-30px;
+        right:50%;
+    }
+    
+    .dotdeux{
+        top:-30px;
+        right:53%;
+    }    
+
+/* CAROUSEL */
+
+    .burger:active{
+        background-color: violet;
+    }
+
+    .burger{
+        visibility:visible;
+    }    
+   
+    nav{
+        visibility: hidden;
+    }
+
+    .banner h1{
+        font-size: 42px;
+        padding-left: 1em;
+        padding-right: 1em;    
+    }
+    .banner p{
+        font-size:18px;
+        padding-left: 0.5em;
+        padding-right: 0.5em;    
+    }
+
+    .features figure{
+        width: 40%;
+    }
+
+    .photoGallery figure{
+        width: 40%;
+    }
+
+    .team figure{
+        width: 40%;
+    }
+
+    .testimonials{
+        flex-direction: column;
+    }
+
+    .testimonials figure{
+        width: 100%;
+    }
+
+    .testimonials img{
+        width:100%;
+    }
+
+    .testimonials q{
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    .testimonials figcaption{
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    .starting h2{
+        width: 80%;
+    }
+
+    .about{
+        flex-direction: column;
+    }
+
+    .about div, h5{
+        margin-bottom: 10px;
+        margin-top: 10px;    
+    }
+
+    .about p{
+        width: 50%;
+    }
+} 
+
+@media screen and (max-width: 640px){
+
+    .banner h1{
+        font-size: 32px;
+    }
+
+    .features figure{
+        width: 90%;
+    }
+
+    .photoGallery figure{
+        width: 100%;
+    }
+
+    .team figure{
+        width: 100%;
+    }
+
+    .dotun{
+        top:-30px;
+        right:47%;
+    }
+    
+    .dotdeux{
+        top:-30px;
+        right:53%;
+    }    
+
+    .text{
+        width:100%;
+    }  
+}
